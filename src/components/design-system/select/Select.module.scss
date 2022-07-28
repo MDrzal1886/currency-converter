@@ -1,0 +1,108 @@
+@import './src/styles/variables';
+
+.container {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+
+	.label {
+		margin: {
+			bottom: 8px;
+		};
+		color: $color-primary;
+		font: {
+			weight: $font-weight-semi-bold;
+		};
+	}
+
+	.select {
+		height: 56px;
+		padding: 17px 16px;
+		background: {
+			color: $color-white;
+		};
+		border-top-left-radius: 5px;
+		border-top-right-radius: 5px;
+		box-shadow: $box-shadow-default;
+		color: $color-primary;
+		cursor: pointer;
+	}
+
+	.default {
+		border-bottom-left-radius: 5px;
+		border-bottom-right-radius: 5px;
+	}
+
+	.active {
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+
+	.options_container {
+		position: absolute;
+		top: 86px;
+		left: 0;
+		max-height: 200px;
+		width: 100%;
+		overflow-y: scroll;
+		background: {
+			color: $color-white;
+		};
+		box-shadow: $box-shadow-default;
+		border-bottom-left-radius: 5px;
+		border-bottom-right-radius: 5px;
+		border: {
+			top: {
+				width: 1px;
+				style: solid;
+				color: $color-primary;
+			};
+		};
+		cursor: pointer;
+		z-index: 10;
+		scrollbar-color: $color-primary $color-scroll-background;
+		scrollbar-width: thin;
+
+		&::-webkit-scrollbar {
+			width: 5px;
+			height: 27px;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background: $color-primary;
+			border-bottom-right-radius: 5px;
+		}
+
+		&::-webkit-scrollbar-track {
+			background: $color-scroll-background;
+			border-bottom-right-radius: 5px;
+		}
+
+		.single_option {
+			padding: {
+				top: 13px;
+				bottom: 13px;
+				left: 16px;
+			};
+			color: $color-primary;
+			transition: $transition;
+
+			&:hover {
+				background: {
+					color: $color-dropdown-option-hover;
+				};
+			}
+		}
+	}
+
+	svg {
+		position: absolute;
+		top: 55px;
+		right: 16px;
+		width: 12px;
+		height: auto;
+		pointer-events: none;
+		z-index: 10;
+	}
+}

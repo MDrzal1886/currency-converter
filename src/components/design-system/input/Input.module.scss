@@ -1,0 +1,128 @@
+@import './src/styles/variables';
+
+.label_container {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+
+	.label {
+		margin: {
+			bottom: 8px;
+		};
+		color: $color-primary;
+		font: {
+			weight: $font-weight-semi-bold;
+		};
+	}
+
+	.input {
+		height: 56px;
+		line-height: 56px;
+		padding: {
+			left: 12px;
+			right: 50px;
+		};
+		outline: none;
+		border: {
+			top: {
+				style: none;
+				width: 0;
+			};
+			right: {
+				style: none;
+				width: 0;
+			};
+			bottom: {
+				style: solid;
+				width: 2px;
+				color: $color-primary;
+			};
+			left: {
+				style: none;
+				width: 0;
+			};
+		};
+		box-shadow: 0 3px 6px #00000029;
+		font: {
+			size: $font-size-input-text;
+		};
+		color: $color-primary;
+		transition: $transition;
+
+		&::-webkit-outer-spin-button,
+		&::-webkit-inner-spin-button {
+			-webkit-appearance: none;
+			margin: 0;
+		}
+
+		&[type=number]{
+			-moz-appearance: textfield;
+		}
+
+		&::placeholder {
+			font: {
+				size: $font-size-regular;
+			};
+		}
+
+		&:focus {
+			border: {
+				bottom: {
+					style: solid;
+					width: 2px;
+					color: $color-input-active;
+				};
+			};
+		}
+	}
+
+	.result {
+		font: {
+			weight: $font-weight-semi-bold;
+		};
+	}
+
+	.currency {
+		position: absolute;
+		top: 47px;
+		right: 12px;
+		border: none !important;
+		color: $color-primary;
+		z-index: 10;
+	}
+
+	.error_message {
+		display: block;
+		height: 17px;
+		margin: {
+			top: 3px;
+			left: 12px;
+		};
+		font: {
+			size: $font-size-error-message;
+		};
+		color: $color-error;
+	}
+
+	.error {
+		border: {
+			bottom: {
+				style: solid;
+				width: 2px;
+				color: $color-error;
+			};
+		};
+		color: $color-error;
+
+		&:focus {
+			border: {
+				bottom: {
+					style: solid;
+					width: 2px;
+					color: $color-error;
+				};
+			};
+		}
+	}
+}

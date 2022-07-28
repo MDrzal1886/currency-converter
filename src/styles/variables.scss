@@ -6,17 +6,27 @@ $color-scroll-background: #E0E5EC;
 $color-disabled: #A3B1C6;
 $color-error: #CA163A;
 $color-white: #FFF;
+$color-dropdown-option-hover: #F6F7F9;
+$color-alert-background: #F6F7F9;
 
 // font-sizes
 $font-size-h1: 35px;
-$font-size-text-focus: 20px;
+$font-size-input-text: 20px;
 $font-size-regular: 16px;
+$font-size-error-message: 12px;
 
 // font-weight
 $font-weight-bold: 700;
 $font-weight-semi-bold: 600;
 $font-weight-regular: 400;
 $font-weight-light: 300;
+
+// box-shadow
+$box-shadow-default: 3px 3px 7px #C2CBD9;
+$box-shadow-hover: 5px 5px 12px #98ADCD;
+
+// transition
+$transition: .1s linear;
 
 
 

@@ -1,5 +1,6 @@
 .app {
 	min-height: 100vh;
+	overflow-x: hidden;
 
 	&:before {
 		content: '';
@@ -8,7 +9,7 @@
 		display: block;
 		height: 40%;
 		width: 100%;
-		background: transparent linear-gradient(270deg, rgba(55, 59, 68, .5) 0%, rgba(115, 183, 200, .5) 100%) 0 0 no-repeat padding-box;
+		background: transparent linear-gradient(270deg, rgba(55, 59, 68, .5) 0%, rgba(115, 183, 200, .5) 100%) 0 0;
 	}
 
 	&:after {
@@ -18,6 +19,6 @@
 		bottom: 0;
 		width: 100%;
 		height: 60%;
-		background: transparent linear-gradient(270deg, rgba(55, 59, 68, .27) 0%, rgba(115, 183, 200, .27) 100%) 0 0 no-repeat padding-box;
+		background: transparent linear-gradient(270deg, rgba(55, 59, 68, .27) 0%, rgba(115, 183, 200, .27) 100%) 0 0;
 	}
 }

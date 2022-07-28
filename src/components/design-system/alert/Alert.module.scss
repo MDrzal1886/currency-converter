@@ -1,0 +1,80 @@
+@import './src/styles/variables';
+
+.background {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background: {
+		color: rgba(51, 85, 102, .4);
+	};
+	overflow: hidden;
+	z-index: 20;
+
+	.alert_modal {
+		position: absolute;
+		bottom: 10px;
+		right: 50%;
+		transform: translateX(50%);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		width: 280px;
+		min-height: 140px;
+		background: {
+			color: $color-alert-background;
+		};
+		padding: 10px;
+		border: {
+			radius: 5px;
+			left: {
+				style: solid;
+				color: $color-error;
+				width: 10px;
+			};
+		};
+		box-shadow: 10px 15px 50px #4548604D;
+
+		.title {
+			margin: {
+				bottom: 12px;
+			};
+			color: $color-primary;
+			font: {
+				weight: $font-weight-bold;
+			};
+		}
+
+		.message {
+			color: $color-primary;
+		}
+
+		.close {
+			position: absolute;
+			top: 0;
+			right: 0;
+			padding: 10px;
+			cursor: pointer;
+		}
+
+		@media (min-width: 500px) {
+			right: 10px;
+			transform: translateX(0);
+			width: 400px;
+		}
+
+		@media (min-width: 800px) {
+			padding: {
+				left: 20px;
+			};
+			right: 64px;
+			bottom: 56px;
+			width: 546px;
+
+			.close {
+				padding: 15px;
+			}
+		}
+	}
+}
