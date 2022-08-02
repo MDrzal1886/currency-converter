@@ -18,7 +18,7 @@ const Alert:FC<AlertProps> = ({
 	return (
 		<div className={styles.background}>
 			<div className={styles.alert_modal}>
-				<p className={styles.title}>Error message</p>
+				<p className={styles.title}>Komunikat błędu</p>
 				<p className={styles.message}>{message}</p>
 				<div
 					className={styles.close}

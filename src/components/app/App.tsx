@@ -16,15 +16,15 @@ const App = () => {
 			<Routes>
 				<Route
 					path="/"
-					element={<ContentContainer name="home"/>}
+					element={<ContentContainer />}
 				/>
 				<Route
 					path="/historia"
-					element={<ContentContainer name="historia"/>}
+					element={<ContentContainer />}
 				/>
 				<Route
 					path="/*"
-					element={<ContentContainer name="error"/>}
+					element={<ContentContainer />}
 				/>
 			</Routes>
 		</div>

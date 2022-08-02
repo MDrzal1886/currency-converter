@@ -6,7 +6,8 @@
 			"@components/*": ["./src/components/*"],
 			"@design-system/*": ["./src/components/design-system/*"],
 			"@assets/*": ["./src/assets/*"],
-			"@hooks/*": ["./src/hooks/*"]
+			"@hooks/*": ["./src/hooks/*"],
+			"@store/*": ["./src/store/*"]
 		}
 	}
 }

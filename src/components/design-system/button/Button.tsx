@@ -5,20 +5,22 @@ import styles from './Button.module.scss';
 
 type ButtonProps = {
 	name: string,
-	onClick: () => void,
+	onClick?: () => void,
+	type: 'button' | 'submit' | 'reset',
 	disabled: boolean
 }
 
 const Button:FC<ButtonProps> = ({
 	name,
 	onClick,
+	type,
 	disabled
 }) => {
 	return (
 		<button
 			className={`${styles.button} ${disabled ? styles.disabled : styles.active}`}
+			type={type}
 			onClick={onClick}
-			disabled={disabled}
 		>
 			{name}
 		</button>

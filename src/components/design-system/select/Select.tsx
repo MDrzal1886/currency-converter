@@ -1,6 +1,6 @@
 import {
-	createRef,
 	FC,
+	useRef,
 	useState
 } from 'react';
 
@@ -27,7 +27,7 @@ const Select:FC<SelectProps> = ({
 	options,
 	onChange
 }) => {
-	const selectRef = createRef<HTMLDivElement>();
+	const selectRef = useRef<HTMLDivElement>(null);
 	const [active, setActive] = useState(false);
 	
 	useOutsideClick(selectRef, setActive);
@@ -47,20 +47,20 @@ const Select:FC<SelectProps> = ({
 				ref={selectRef}
 			>
 				{value}
+				{active &&
+					<div className={styles.options_container}>
+						{options.map((option, index) => (
+							<div
+								className={styles.single_option}
+								onClick={() => onChange(option)}
+								key={index}
+							>
+								{option}
+							</div>
+						))}
+					</div>
+				}
 			</div>
-			{active &&
-				<div className={styles.options_container}>
-					{options.map((option, index) => (
-						<div
-							className={styles.single_option}
-							onClick={() => onChange(option)}
-							key={index}
-						>
-							{option}
-						</div>
-					))}
-				</div>
-			}
 		</div>
 	);
 }

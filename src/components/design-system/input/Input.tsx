@@ -2,25 +2,33 @@ import {FC} from 'react';
 
 // styles
 import styles from './Input.module.scss';
+import {FieldValues, RegisterOptions, UseFormRegister, UseFormSetValue} from 'react-hook-form';
+import {IFormInputs} from '@components/form/Form';
 
 type InputProps = {
+	name: 'result' | 'amount',
 	label: string,
 	placeholder: string,
-	value: string,
-	onChange: () => void,
+	value?: string,
+	handleOnChange?:  UseFormSetValue<IFormInputs>,
 	currency: string,
 	result: boolean,
-	error: boolean,
+	register?: UseFormRegister<IFormInputs>,
+	validation?:  RegisterOptions,
+	error?: boolean,
 	errorMessage?: string,
 }
 
 const Input:FC<InputProps> = ({
+	name,
 	label,
 	placeholder,
 	value,
-	onChange,
+	handleOnChange,
 	currency,
 	result,
+	register,
+	validation,
 	error,
 	errorMessage
 }) => {
@@ -31,10 +39,14 @@ const Input:FC<InputProps> = ({
 			</span>
 			<input
 				className={`${styles.input} ${result ? styles.result : ''} ${error ? styles.error : ''}`}
+				{...register && register(name, validation)}
 				type="number"
 				placeholder={placeholder}
-				value={value}
-				onChange={onChange}
+				defaultValue={value}
+				disabled={result}
+				onChange={(e) => {
+					handleOnChange && handleOnChange(name, e.target.value, {shouldValidate: true})
+				}}
 			/>
 			<span className={`${styles.currency} ${error ? styles.error : ''}`}>
 				{currency}
