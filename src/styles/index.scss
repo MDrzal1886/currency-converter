@@ -8,4 +8,19 @@
 	font-family: 'Open Sans', sans-serif;
 	font-size: $font-size-regular;
 	font-weight: $font-weight-regular;
+	scrollbar-color: $color-primary $color-scroll-background;
+	scrollbar-width: thin;
+
+	&::-webkit-scrollbar {
+		width: 5px;
+		height: 27px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: $color-primary;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: $color-scroll-background;
+	}
 }

@@ -4,9 +4,15 @@ import {
 } from '@reduxjs/toolkit';
 
 interface IExchangeHistory {
-	data: string,
-	amountFrom: string,
-	amountTo: string
+	date: string,
+	amountFrom: {
+		amount: number,
+		currency: string
+	},
+	amountTo: {
+		amount: number,
+		currency: string
+	}
 }
 
 const initialState: {exchangeHistory: IExchangeHistory[]} = {
@@ -18,7 +24,7 @@ export const exchangeHistorySlice = createSlice({
 	initialState,
 	reducers: {
 		add: (state, action:PayloadAction<IExchangeHistory>) => {
-			state.exchangeHistory = [...state.exchangeHistory, action.payload];
+			state.exchangeHistory = [action.payload, ...state.exchangeHistory];
 			return state
 		},
 		clear: (state) => {

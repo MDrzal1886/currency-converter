@@ -1,29 +1,109 @@
 @import './src/styles/variables';
 
-.content_container {
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	width: 80%;
-	background: transparent linear-gradient(180deg, rgba(255, 255, 255, 0.83) 0%, rgba(255, 255, 255, 1) 100%) 0 0;
-	padding: 8px;
-	border: {
-		style: solid;
-		width: 3px;
-		color: $color-white;
-		radius: 30px;
+.wrapper {
+	margin: {
+		bottom: 30px;
 	};
-	z-index: 10;
 
-	.title {
+	.content_wrapper {
+		position: relative;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, 0);
+		width: 90%;
+		max-width: 1300px;
+		background: transparent linear-gradient(180deg, rgba(255, 255, 255, 0.83) 0%, rgba(255, 255, 255, 1) 100%) 0 0;
 		margin: {
-			top: 10px;
+			top: 30px;
 		};
-		font: {
-			size: $font-size-h1-mobile;
-			weight: $font-weight-bold;
+		padding: 8px;
+		border: {
+			style: solid;
+			width: 3px;
+			color: $color-white;
+			radius: 30px;
 		};
-		text-align: center;
+		z-index: 10;
+
+		.title {
+			margin: {
+				top: 10px;
+			};
+			font: {
+				size: $font-size-h1-mobile;
+				weight: $font-weight-bold;
+			};
+			color: $color-primary;
+			text-align: center;
+
+			@media (min-width: 1260px) {
+				margin: {
+					top: 0;
+					bottom: 64px;
+				};
+				font: {
+					size: $font-size-h1;
+				};
+			}
+		}
+
+		@media (min-width: 700px) {
+			padding: 24px;
+		}
+
+		@media (min-width: 1260px) {
+			margin: {
+				top: 45px;
+			};
+			padding: 64px;
+		}
+	}
+
+	.error_page_wrapper {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		width: 90%;
+		max-width: 500px;
+		height: 300px;
+		transform: translate(-50%, -50%);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		border: {
+			style: solid;
+			width: 3px;
+			color: $color-white;
+			radius: 30px;
+		};
+		background: transparent linear-gradient(180deg, rgba(255, 255, 255, 0.83) 0%, rgba(255, 255, 255, 1) 100%) 0 0;
+		z-index: 10;
+
+		h1 {
+			margin: {
+				bottom: 30px;
+			};
+			font: {
+				size: $font-size-h1-mobile;
+			};
+			text-align: center;
+
+			p {
+				font: {
+					size: 40px;
+				};
+			}
+		}
+
+		.button_wrapper {
+			width: 250px;
+		}
+	}
+
+	@media (min-width: 1260px) {
+		margin: {
+			bottom: 45px;
+		};
 	}
 }

@@ -14,21 +14,19 @@ type AlertProps = {
 const Alert:FC<AlertProps> = ({
 	message,
 	handleClose
-}) => {
-	return (
-		<div className={styles.background}>
-			<div className={styles.alert_modal}>
-				<p className={styles.title}>Komunikat błędu</p>
-				<p className={styles.message}>{message}</p>
-				<div
-					className={styles.close}
-					onClick={handleClose}
-				>
-					<Close />
-				</div>
+}) => (
+	<div className={styles.background}>
+		<div className={styles.alert_modal}>
+			<p className={styles.title}>Komunikat błędu</p>
+			<p className={styles.message}>{message}</p>
+			<div
+				className={styles.close}
+				onClick={handleClose}
+			>
+				<Close />
 			</div>
 		</div>
-	);
-}
+	</div>
+);
 
 export default Alert;

@@ -4,13 +4,9 @@ import {
 } from 'react';
 import {useQuery} from '@tanstack/react-query';
 import axios, {AxiosError} from 'axios';
-import useErrorMessage from '@hooks/useErrorMessage';
 
-const fetchCurrencies = async () => (
-	await axios.get('https://api.apilayer.com/exchangerates_data/symbols', {
-		headers: {'apikey': `${process.env.REACT_APP_APILAYER_KEY}`}
-	})
-);
+// hooks
+import useErrorMessage from '@hooks/useErrorMessage';
 
 interface ICurrenciesData {
 	data: {
@@ -20,7 +16,13 @@ interface ICurrenciesData {
 	}
 }
 
-const useQueryCurrencies = () => {
+const fetchCurrencies = async () => (
+	await axios.get('https://api.apilayer.com/exchangerates_data/symbols', {
+		headers: {'apikey': `${process.env.REACT_APP_APILAYER_KEY}`}
+	})
+);
+
+const useQueryCurrencies = (setErrorMessage: (value: string) => void) => {
 	const {
 		data,
 		isError,
@@ -34,9 +36,7 @@ const useQueryCurrencies = () => {
 	
 	const {
 		convertStatusToMessage,
-		errormessage,
-		setErrorMessage
-	} = useErrorMessage();
+	} = useErrorMessage(setErrorMessage);
 	
 	const [currencies, setCurrencies] = useState<string[]>([]);
 	
@@ -53,8 +53,7 @@ const useQueryCurrencies = () => {
 	}, [data, error]);
 	return {
 		currencies,
-		isError,
-		errormessage
+		isError
 	}
 }
 

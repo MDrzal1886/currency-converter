@@ -1,8 +1,4 @@
-import {useState} from 'react';
-
-const useErrorMessage = () => {
-	const [errormessage, setErrorMessage] = useState('');
-	
+const useErrorMessage = (setErrorMessage: (value: string) => void) => {
 	const convertStatusToMessage = (status: number) => {
 		if (status >= 500) {
 			setErrorMessage('Błąd serwera, spróbuj ponownie później.');
@@ -24,9 +20,7 @@ const useErrorMessage = () => {
 		}
 	}
 	return {
-		convertStatusToMessage,
-		errormessage,
-		setErrorMessage
+		convertStatusToMessage
 	}
 }
 

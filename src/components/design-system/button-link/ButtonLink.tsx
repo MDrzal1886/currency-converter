@@ -12,15 +12,13 @@ type ButtonLinkProps = {
 const ButtonLink:FC<ButtonLinkProps> = ({
 	name,
 	path
-}) => {
-	return (
-		<Link
-			className={styles.button_link}
-			to={path}
-		>
-			{name}
-		</Link>
-	);
-}
+}) => (
+	<Link
+		className={styles.button_link}
+		to={path}
+	>
+		{name}
+	</Link>
+);
 
 export default ButtonLink;

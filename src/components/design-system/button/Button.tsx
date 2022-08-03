@@ -15,16 +15,14 @@ const Button:FC<ButtonProps> = ({
 	onClick,
 	type,
 	disabled
-}) => {
-	return (
-		<button
-			className={`${styles.button} ${disabled ? styles.disabled : styles.active}`}
-			type={type}
-			onClick={onClick}
-		>
-			{name}
-		</button>
-	);
-}
+}) => (
+	<button
+		className={`${styles.button} ${disabled ? styles.disabled : styles.active}`}
+		type={type}
+		onClick={onClick}
+	>
+		{name}
+	</button>
+);
 
 export default Button;
