@@ -22,7 +22,7 @@ const useOutsideClick = <T extends HTMLElement>(
 			document.removeEventListener('mousedown', handleClickOutside);
 			document.removeEventListener('touchstart', handleClickOutside);
 		};
-	}, [ref]);
+	}, [ref, handleClose]);
 }
 
 export default useOutsideClick;

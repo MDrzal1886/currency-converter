@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {HashRouter} from 'react-router-dom';
+import {BrowserRouter} from 'react-router-dom';
 import {Provider} from 'react-redux';
 import {PersistGate} from 'redux-persist/integration/react';
 import {
@@ -28,7 +28,7 @@ const queryClient = new QueryClient();
 
 root.render(
   <React.StrictMode>
-     <HashRouter>
+     <BrowserRouter>
         <Provider store={store}>
            <PersistGate
               loading={null}
@@ -39,6 +39,6 @@ root.render(
               </QueryClientProvider>
            </PersistGate>
         </Provider>
-     </HashRouter>
+     </BrowserRouter>
   </React.StrictMode>
 );

@@ -1,6 +1,5 @@
 {
   "name": "currency-converter",
-  "homepage": "https://mdrzal1886.github.io/currency-converter",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -18,8 +17,6 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "predeploy": "react-app-rewired build",
-    "deploy": "gh-pages -d build",
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
@@ -48,7 +45,6 @@
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
     "@types/react-redux": "^7.1.24",
-    "gh-pages": "^4.0.0",
     "react-app-rewired": "^2.2.1",
     "sass": "^1.54.0",
     "typescript": "^4.7.4"
