@@ -1,5 +1,5 @@
 import {
-	useLayoutEffect,
+	useEffect,
 	useState
 } from 'react';
 import {useNavigate} from 'react-router-dom';
@@ -26,7 +26,7 @@ const ExchangeHistory = () => {
 	const dispatch = useAppDispatch();
 	const [width, setWidth] = useState(window.innerWidth);
 	
-	useLayoutEffect(() => {
+	useEffect(() => {
 		window.addEventListener('resize', () => setWidth(window.innerWidth));
 		return () => {
 			window.removeEventListener('resize', () => setWidth(window.innerWidth));

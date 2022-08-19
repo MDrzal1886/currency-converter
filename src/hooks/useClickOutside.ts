@@ -2,14 +2,14 @@ import {
 	Dispatch,
 	RefObject,
 	SetStateAction,
-	useLayoutEffect
+	useEffect,
 } from 'react';
 
 const useOutsideClick = <T extends HTMLElement>(
 	ref: RefObject<T>,
 	handleClose: Dispatch<SetStateAction<boolean>>
 ) => {
-	useLayoutEffect(() => {
+	useEffect(() => {
 		const handleClickOutside = (e: MouseEvent | TouchEvent) =>  {
 			if (ref.current && !ref.current.contains(e.target as Node)) {
 				handleClose(false);

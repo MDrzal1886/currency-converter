@@ -24,8 +24,8 @@ export const exchangeHistorySlice = createSlice({
 	initialState,
 	reducers: {
 		add: (state, action:PayloadAction<IExchangeHistory>) => {
-			state.exchangeHistory = [action.payload, ...state.exchangeHistory];
-			return state
+			state.exchangeHistory.unshift(action.payload);
+			return state;
 		},
 		clear: (state) => {
 			state = initialState;

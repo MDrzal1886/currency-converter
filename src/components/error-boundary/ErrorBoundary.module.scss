@@ -1,0 +1,21 @@
+@import './src/styles/variables';
+
+.error_wrapper {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	.error_title {
+		font: {
+			size: $font-size-h1-mobile;
+		};
+		text-align: center;
+
+		@media (min-width: 1260px) {
+			font: {
+				size: $font-size-h1;
+			};
+		}
+	}
+}
